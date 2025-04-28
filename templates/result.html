@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0fe;
+            padding: 30px;
+            text-align: center;
+        }
+        .result-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .result-box p {
+            font-size: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #8aa8c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>The Country Name is :</h2>
+        <p><strong>Country_code:</strong> {{ result1 }}</p>
+        <p><strong>Country_name:</strong> {{ result2 }}</p>
+        <br>
+        <a href="/">Try another number</a>
+    </div>
+</body>
+</html>
