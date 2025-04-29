@@ -23,7 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: 🐳 Build Docker image
-      run: docker build -t myapp .
+    - name: Build Docker image
+      run: docker build -t amant123/myapp:latest .
+      
+    - name: Push to Docker Hub
+      run: docker push amant123/myapp:latest
+      
 
     # Optional: Push to Docker Hub or run the container here
