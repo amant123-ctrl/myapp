@@ -6,6 +6,21 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('form.html')
+    
+    @app.route('/test-db')
+def test_db():
+    try:
+        conn = mysql.connector.connect(
+            host=os.environ.get('DB_HOST', 'localhost'),
+            user=os.environ.get('DB_USER', 'root'),
+            password=os.environ.get('DB_PASSWORD', 'yourpassword'),
+            database=os.environ.get('DB_NAME', 'test')
+        )
+        conn.close()
+        return "✅ Successfully connected to MySQL!"
+    except Exception as e:
+        return f"❌ Failed to connect: {e}"
+
 
 @app.route('/submit', methods=['POST'])
 def submit():
