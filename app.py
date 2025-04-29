@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('form.html')
+@app.route('/test-db')
 def test_db():
     try:
         conn = mysql.connector.connect(
