@@ -13,11 +13,12 @@ def submit():
 
     try:
         conn = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='',
-            database='test'
-        )
+        host=os.environ.get('DB_HOST', 'localhost'),  # docker MySQL server address
+        user=os.environ.get('DB_USER', 'root'),
+        password=os.environ.get('DB_PASSWORD', 'yourpassword'),
+        database=os.environ.get('DB_NAME', 'test')
+                                       )
+
         cursor = conn.cursor()
         cursor.callproc('sp_get_country_code', [user_number])
 
