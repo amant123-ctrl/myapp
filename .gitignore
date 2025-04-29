@@ -1,0 +1,30 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Flask debug files
+instance/
+*.db
+
+# VSCode and IDE settings
+.vscode/
+*.code-workspace
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.sock
