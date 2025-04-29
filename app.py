@@ -11,7 +11,7 @@ def index():
 def test_db():
     try:
         conn = mysql.connector.connect(
-            host=os.environ.get('DB_HOST', 'localhost'),
+            host=os.environ.get('DB_HOST', 'mysql-db'),
             user=os.environ.get('DB_USER', 'root'),
             password=os.environ.get('DB_PASSWORD', 'yourpassword'),
             database=os.environ.get('DB_NAME', 'test')
@@ -28,7 +28,7 @@ def submit():
 
     try:
         conn = mysql.connector.connect(
-        host=os.environ.get('DB_HOST', 'localhost'),  # docker MySQL server address
+        host=os.environ.get('DB_HOST', 'mysql-db'),  # docker MySQL server address
         user=os.environ.get('DB_USER', 'root'),
         password=os.environ.get('DB_PASSWORD', 'yourpassword'),
         database=os.environ.get('DB_NAME', 'test')
