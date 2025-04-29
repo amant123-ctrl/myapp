@@ -7,12 +7,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('form.html')
-    
-<<<<<<< HEAD
-    @app.route('/test-db')
-=======
-@app.route('/test-db')
->>>>>>> febd10b (Work in progress)
 def test_db():
     try:
         conn = mysql.connector.connect(
